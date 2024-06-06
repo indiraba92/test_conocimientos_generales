@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX Fetch Example</title>
+</head>
+<body>
+    <div id="result"></div>
+
+    <script>
+        // Función para hacer una solicitud AJAX usando fetch
+        function obtenerDatosDeAPI() {
+            // URL de la API de ejemplo 
+            let url = 'https://pokeapi.co/api/v2/pokemon';
+
+            // Hacer la solicitud utilizando fetch
+            fetch(url)
+                .then(response => {
+                    // Verificar si la respuesta es exitosa 
+                    if (!response.ok) {
+                        throw new Error('No se pudo obtener los datos de la API');
+                    }
+                    // Devolver los datos en formato JSON
+                    return response.json();
+                })
+                .then(data => {
+                    // Mostrar los datos en el elemento con el ID 'result'
+                    document.getElementById('result').textContent = JSON.stringify(data);
+                })
+                .catch(error => {
+                    // Manejar errores
+                    console.error('Error:', error);
+                });
+        }
+
+        // Llamar a la función para obtener los datos cuando se carga la página
+        obtenerDatosDeAPI();
+    </script>
+</body>
+</html>

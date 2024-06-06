@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EventListener Example</title>
+</head>
+<body>
+    <button id="myButton">Click Me</button>
+
+    <script>
+        // Obtener una referencia al botón por su ID
+        const button = document.getElementById('myButton');
+
+        // Añadir un event listener al botón para el evento 'click'
+        button.addEventListener('click', function() {
+            // Mostrar una alerta con el mensaje "Hello World"
+            alert('Hello World');
+        });
+    </script>
+</body>
+</html>
